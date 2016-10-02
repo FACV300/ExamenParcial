@@ -66,19 +66,16 @@ Partial Class MainForm
         Me.tblTotal = New System.Windows.Forms.TableLayoutPanel()
         Me.lblTotalT = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.plProductoM = New System.Windows.Forms.Panel()
         Me.PBPRINCIPAL = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ILHS = New System.Windows.Forms.ImageList(Me.components)
-        Me.ILHN = New System.Windows.Forms.ImageList(Me.components)
-        Me.ILMN = New System.Windows.Forms.ImageList(Me.components)
-        Me.ILMS = New System.Windows.Forms.ImageList(Me.components)
         Me.ILCN = New System.Windows.Forms.ImageList(Me.components)
-        Me.ILCS = New System.Windows.Forms.ImageList(Me.components)
         Me.ILAN = New System.Windows.Forms.ImageList(Me.components)
-        Me.ILAS = New System.Windows.Forms.ImageList(Me.components)
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ILMN = New System.Windows.Forms.ImageList(Me.components)
+        Me.ILHN = New System.Windows.Forms.ImageList(Me.components)
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.pbCover, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.plMainTitle.SuspendLayout()
@@ -96,9 +93,9 @@ Partial Class MainForm
         Me.tblTalla.SuspendLayout()
         Me.tblCantidad.SuspendLayout()
         Me.tblTotal.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.plProductoM.SuspendLayout()
         CType(Me.PBPRINCIPAL, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'pbCover
@@ -178,6 +175,7 @@ Partial Class MainForm
         Me.PB4.Location = New System.Drawing.Point(3, 378)
         Me.PB4.Name = "PB4"
         Me.PB4.Size = New System.Drawing.Size(93, 122)
+        Me.PB4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PB4.TabIndex = 3
         Me.PB4.TabStop = False
         '
@@ -189,6 +187,7 @@ Partial Class MainForm
         Me.PB3.Location = New System.Drawing.Point(3, 253)
         Me.PB3.Name = "PB3"
         Me.PB3.Size = New System.Drawing.Size(93, 119)
+        Me.PB3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PB3.TabIndex = 2
         Me.PB3.TabStop = False
         '
@@ -200,6 +199,7 @@ Partial Class MainForm
         Me.PB2.Location = New System.Drawing.Point(3, 128)
         Me.PB2.Name = "PB2"
         Me.PB2.Size = New System.Drawing.Size(93, 119)
+        Me.PB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PB2.TabIndex = 1
         Me.PB2.TabStop = False
         '
@@ -211,6 +211,7 @@ Partial Class MainForm
         Me.PB1.Location = New System.Drawing.Point(3, 3)
         Me.PB1.Name = "PB1"
         Me.PB1.Size = New System.Drawing.Size(93, 119)
+        Me.PB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PB1.TabIndex = 0
         Me.PB1.TabStop = False
         '
@@ -247,11 +248,11 @@ Partial Class MainForm
         Me.lblTallaT.AutoSize = True
         Me.lblTallaT.Font = New System.Drawing.Font("Segoe UI Semibold", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTallaT.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lblTallaT.Location = New System.Drawing.Point(57, 4)
+        Me.lblTallaT.Location = New System.Drawing.Point(75, 4)
         Me.lblTallaT.Name = "lblTallaT"
-        Me.lblTallaT.Size = New System.Drawing.Size(79, 13)
+        Me.lblTallaT.Size = New System.Drawing.Size(43, 13)
         Me.lblTallaT.TabIndex = 4
-        Me.lblTallaT.Text = "LOREM IPSUM"
+        Me.lblTallaT.Text = "TALLAS"
         '
         'tblTitle
         '
@@ -615,11 +616,13 @@ Partial Class MainForm
         '
         Me.tblTotal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tblTotal.ColumnCount = 2
+        Me.tblTotal.ColumnCount = 3
         Me.tblTotal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.tblTotal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tblTotal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72.0!))
+        Me.tblTotal.Controls.Add(Me.Label3, 0, 0)
         Me.tblTotal.Controls.Add(Me.lblTotalT, 0, 0)
-        Me.tblTotal.Controls.Add(Me.lblTotal, 1, 0)
+        Me.tblTotal.Controls.Add(Me.lblTotal, 2, 0)
         Me.tblTotal.Location = New System.Drawing.Point(3, 471)
         Me.tblTotal.Margin = New System.Windows.Forms.Padding(3, 3, 0, 0)
         Me.tblTotal.Name = "tblTotal"
@@ -632,12 +635,13 @@ Partial Class MainForm
         '
         Me.lblTotalT.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblTotalT.AutoSize = True
+        Me.lblTotalT.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalT.Location = New System.Drawing.Point(1, 14)
         Me.lblTotalT.Margin = New System.Windows.Forms.Padding(1, 0, 3, 5)
         Me.lblTotalT.Name = "lblTotalT"
-        Me.lblTotalT.Size = New System.Drawing.Size(72, 13)
+        Me.lblTotalT.Size = New System.Drawing.Size(36, 13)
         Me.lblTotalT.TabIndex = 0
-        Me.lblTotalT.Text = "Lorem Ipsum"
+        Me.lblTotalT.Text = "Total:"
         '
         'lblTotal
         '
@@ -646,155 +650,13 @@ Partial Class MainForm
         Me.lblTotal.Font = New System.Drawing.Font("Segoe UI Semibold", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotal.ForeColor = System.Drawing.Color.SteelBlue
         Me.lblTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.lblTotal.Location = New System.Drawing.Point(160, 1)
+        Me.lblTotal.Location = New System.Drawing.Point(172, 1)
         Me.lblTotal.Margin = New System.Windows.Forms.Padding(3, 1, 0, 0)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Padding = New System.Windows.Forms.Padding(0, 1, 0, 0)
-        Me.lblTotal.Size = New System.Drawing.Size(37, 31)
+        Me.lblTotal.Size = New System.Drawing.Size(25, 31)
         Me.lblTotal.TabIndex = 0
-        Me.lblTotal.Text = "$0"
-        '
-        'plProductoM
-        '
-        Me.plProductoM.Controls.Add(Me.PBPRINCIPAL)
-        Me.plProductoM.Location = New System.Drawing.Point(105, 215)
-        Me.plProductoM.Name = "plProductoM"
-        Me.plProductoM.Size = New System.Drawing.Size(381, 503)
-        Me.plProductoM.TabIndex = 13
-        '
-        'PBPRINCIPAL
-        '
-        Me.PBPRINCIPAL.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PBPRINCIPAL.Location = New System.Drawing.Point(0, 0)
-        Me.PBPRINCIPAL.Name = "PBPRINCIPAL"
-        Me.PBPRINCIPAL.Size = New System.Drawing.Size(381, 503)
-        Me.PBPRINCIPAL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PBPRINCIPAL.TabIndex = 0
-        Me.PBPRINCIPAL.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(184, 728)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(318, 13)
-        Me.Label1.TabIndex = 14
-        Me.Label1.Text = "Copyright 2016 Tommy Hilfigrt Licensing, LLC. All rig reserved"
-        '
-        'ILHS
-        '
-        Me.ILHS.ImageStream = CType(resources.GetObject("ILHS.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ILHS.TransparentColor = System.Drawing.Color.Transparent
-        Me.ILHS.Images.SetKeyName(0, "h-01-01-small.jpg")
-        Me.ILHS.Images.SetKeyName(1, "h-01-02-small.jpg")
-        Me.ILHS.Images.SetKeyName(2, "h-01-03-small.jpg")
-        Me.ILHS.Images.SetKeyName(3, "h-01-04-small.jpg")
-        Me.ILHS.Images.SetKeyName(4, "h-02-01-small.jpg")
-        Me.ILHS.Images.SetKeyName(5, "h-02-02-small.jpg")
-        Me.ILHS.Images.SetKeyName(6, "h-02-03-small.jpg")
-        Me.ILHS.Images.SetKeyName(7, "h-02-04-small.jpg")
-        Me.ILHS.Images.SetKeyName(8, "h-03-01-small.jpg")
-        Me.ILHS.Images.SetKeyName(9, "h-03-02-small.jpg")
-        Me.ILHS.Images.SetKeyName(10, "h-03-03-small.jpg")
-        Me.ILHS.Images.SetKeyName(11, "h-03-04-small.jpg")
-        '
-        'ILHN
-        '
-        Me.ILHN.ImageStream = CType(resources.GetObject("ILHN.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ILHN.TransparentColor = System.Drawing.Color.Transparent
-        Me.ILHN.Images.SetKeyName(0, "h-01-01-normal.jpg")
-        Me.ILHN.Images.SetKeyName(1, "h-01-02-normal.jpg")
-        Me.ILHN.Images.SetKeyName(2, "h-01-03-normal.jpg")
-        Me.ILHN.Images.SetKeyName(3, "h-01-04-normal.jpg")
-        Me.ILHN.Images.SetKeyName(4, "h-02-01-normal.jpg")
-        Me.ILHN.Images.SetKeyName(5, "h-02-02-normal.jpg")
-        Me.ILHN.Images.SetKeyName(6, "h-02-03-normal.jpg")
-        Me.ILHN.Images.SetKeyName(7, "h-02-04-normal.jpg")
-        Me.ILHN.Images.SetKeyName(8, "h-03-01-normal.jpg")
-        Me.ILHN.Images.SetKeyName(9, "h-03-02-normal.jpg")
-        Me.ILHN.Images.SetKeyName(10, "h-03-03-normal.jpg")
-        Me.ILHN.Images.SetKeyName(11, "h-03-04-normal.jpg")
-        '
-        'ILMN
-        '
-        Me.ILMN.ImageStream = CType(resources.GetObject("ILMN.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ILMN.TransparentColor = System.Drawing.Color.Transparent
-        Me.ILMN.Images.SetKeyName(0, "m-02-01-normal.jpg")
-        Me.ILMN.Images.SetKeyName(1, "m-02-02-normal.jpg")
-        Me.ILMN.Images.SetKeyName(2, "m-02-03-normal.jpg")
-        Me.ILMN.Images.SetKeyName(3, "m-02-04-normal.jpg")
-        Me.ILMN.Images.SetKeyName(4, "m-02-01-normal.jpg")
-        Me.ILMN.Images.SetKeyName(5, "m-02-02-normal.jpg")
-        Me.ILMN.Images.SetKeyName(6, "m-02-03-normal.jpg")
-        Me.ILMN.Images.SetKeyName(7, "m-02-04-normal.jpg")
-        Me.ILMN.Images.SetKeyName(8, "m-03-01-normal.jpg")
-        Me.ILMN.Images.SetKeyName(9, "m-03-02-normal.jpg")
-        '
-        'ILMS
-        '
-        Me.ILMS.ImageStream = CType(resources.GetObject("ILMS.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ILMS.TransparentColor = System.Drawing.Color.Transparent
-        Me.ILMS.Images.SetKeyName(0, "m-01-01-small.jpg")
-        Me.ILMS.Images.SetKeyName(1, "m-01-02-small.jpg")
-        Me.ILMS.Images.SetKeyName(2, "m-01-03-small.jpg")
-        Me.ILMS.Images.SetKeyName(3, "m-01-04-small.jpg")
-        Me.ILMS.Images.SetKeyName(4, "m-02-01-small.jpg")
-        Me.ILMS.Images.SetKeyName(5, "m-02-02-small.jpg")
-        Me.ILMS.Images.SetKeyName(6, "m-02-03-small.jpg")
-        Me.ILMS.Images.SetKeyName(7, "m-02-04-small.jpg")
-        Me.ILMS.Images.SetKeyName(8, "m-03-01-small.jpg")
-        Me.ILMS.Images.SetKeyName(9, "m-03-02-small.jpg")
-        '
-        'ILCN
-        '
-        Me.ILCN.ImageStream = CType(resources.GetObject("ILCN.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ILCN.TransparentColor = System.Drawing.Color.Transparent
-        Me.ILCN.Images.SetKeyName(0, "I_5054618311879_50_20160419.jpg")
-        Me.ILCN.Images.SetKeyName(1, "I_5054618311879_51_20160419.jpg")
-        Me.ILCN.Images.SetKeyName(2, "I_5054618311879_52_20160419.jpg")
-        Me.ILCN.Images.SetKeyName(3, "I_5054618311879_53_20160419.jpg")
-        Me.ILCN.Images.SetKeyName(4, "c-02-01-normal.jpg")
-        Me.ILCN.Images.SetKeyName(5, "c-02-02-normal.jpg")
-        Me.ILCN.Images.SetKeyName(6, "c-02-03-normal.jpg")
-        Me.ILCN.Images.SetKeyName(7, "c-02-04-normal.jpg")
-        Me.ILCN.Images.SetKeyName(8, "c-03-01-normal.jpg")
-        Me.ILCN.Images.SetKeyName(9, "c-03-02-normal.jpg")
-        Me.ILCN.Images.SetKeyName(10, "c-03-03-normal.jpg")
-        Me.ILCN.Images.SetKeyName(11, "c-03-04-normal.jpg")
-        '
-        'ILCS
-        '
-        Me.ILCS.ImageStream = CType(resources.GetObject("ILCS.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ILCS.TransparentColor = System.Drawing.Color.Transparent
-        Me.ILCS.Images.SetKeyName(0, "c-01-01-small.jpg")
-        Me.ILCS.Images.SetKeyName(1, "c-01-02-small.jpg")
-        Me.ILCS.Images.SetKeyName(2, "c-01-03-small.jpg")
-        Me.ILCS.Images.SetKeyName(3, "c-01-04-small.jpg")
-        Me.ILCS.Images.SetKeyName(4, "c-02-01-small.jpg")
-        Me.ILCS.Images.SetKeyName(5, "c-02-02-small.jpg")
-        Me.ILCS.Images.SetKeyName(6, "c-02-03-small.jpg")
-        Me.ILCS.Images.SetKeyName(7, "c-02-04-small.jpg")
-        Me.ILCS.Images.SetKeyName(8, "c-03-01-small.jpg")
-        Me.ILCS.Images.SetKeyName(9, "c-03-02-small.jpg")
-        Me.ILCS.Images.SetKeyName(10, "c-03-03-small.jpg")
-        Me.ILCS.Images.SetKeyName(11, "c-03-04-small.jpg")
-        '
-        'ILAN
-        '
-        Me.ILAN.ImageStream = CType(resources.GetObject("ILAN.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ILAN.TransparentColor = System.Drawing.Color.Transparent
-        Me.ILAN.Images.SetKeyName(0, "a-01-01-normal.jpg")
-        Me.ILAN.Images.SetKeyName(1, "a-02-01-normal.jpg")
-        '
-        'ILAS
-        '
-        Me.ILAS.ImageStream = CType(resources.GetObject("ILAS.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ILAS.TransparentColor = System.Drawing.Color.Transparent
-        Me.ILAS.Images.SetKeyName(0, "a-01-01-normal.jpg")
-        Me.ILAS.Images.SetKeyName(1, "a-02-01-small.jpg")
-        Me.ILAS.Images.SetKeyName(2, "blamco.jpg")
+        Me.lblTotal.Text = "0"
         '
         'TableLayoutPanel1
         '
@@ -823,12 +685,111 @@ Partial Class MainForm
         Me.Label2.Text = "$"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'plProductoM
+        '
+        Me.plProductoM.Controls.Add(Me.PBPRINCIPAL)
+        Me.plProductoM.Location = New System.Drawing.Point(105, 215)
+        Me.plProductoM.Name = "plProductoM"
+        Me.plProductoM.Size = New System.Drawing.Size(381, 503)
+        Me.plProductoM.TabIndex = 13
+        '
+        'PBPRINCIPAL
+        '
+        Me.PBPRINCIPAL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.PBPRINCIPAL.Location = New System.Drawing.Point(0, 0)
+        Me.PBPRINCIPAL.Name = "PBPRINCIPAL"
+        Me.PBPRINCIPAL.Size = New System.Drawing.Size(381, 503)
+        Me.PBPRINCIPAL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PBPRINCIPAL.TabIndex = 0
+        Me.PBPRINCIPAL.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(184, 728)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(329, 13)
+        Me.Label1.TabIndex = 14
+        Me.Label1.Text = "Copyright 2016 Tommy Hilfigrt Licensing, LLC. All right reserved"
+        '
+        'ILCN
+        '
+        Me.ILCN.ImageStream = CType(resources.GetObject("ILCN.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ILCN.TransparentColor = System.Drawing.Color.Transparent
+        Me.ILCN.Images.SetKeyName(0, "I_5054618311879_50_20160419.jpg")
+        Me.ILCN.Images.SetKeyName(1, "I_5054618311879_51_20160419.jpg")
+        Me.ILCN.Images.SetKeyName(2, "I_5054618311879_52_20160419.jpg")
+        Me.ILCN.Images.SetKeyName(3, "I_5054618311879_53_20160419.jpg")
+        Me.ILCN.Images.SetKeyName(4, "c-02-01-normal.jpg")
+        Me.ILCN.Images.SetKeyName(5, "c-02-02-normal.jpg")
+        Me.ILCN.Images.SetKeyName(6, "c-02-03-normal.jpg")
+        Me.ILCN.Images.SetKeyName(7, "c-02-04-normal.jpg")
+        Me.ILCN.Images.SetKeyName(8, "c-03-01-normal.jpg")
+        Me.ILCN.Images.SetKeyName(9, "c-03-02-normal.jpg")
+        Me.ILCN.Images.SetKeyName(10, "c-03-03-normal.jpg")
+        Me.ILCN.Images.SetKeyName(11, "c-03-04-normal.jpg")
+        '
+        'ILAN
+        '
+        Me.ILAN.ImageStream = CType(resources.GetObject("ILAN.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ILAN.TransparentColor = System.Drawing.Color.Transparent
+        Me.ILAN.Images.SetKeyName(0, "a-01-01-normal.jpg")
+        Me.ILAN.Images.SetKeyName(1, "a-02-01-normal.jpg")
+        Me.ILAN.Images.SetKeyName(2, "blamco.jpg")
+        '
+        'ILMN
+        '
+        Me.ILMN.ImageStream = CType(resources.GetObject("ILMN.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ILMN.TransparentColor = System.Drawing.Color.Transparent
+        Me.ILMN.Images.SetKeyName(0, "m-02-01-normal.jpg")
+        Me.ILMN.Images.SetKeyName(1, "m-02-02-normal.jpg")
+        Me.ILMN.Images.SetKeyName(2, "m-02-03-normal.jpg")
+        Me.ILMN.Images.SetKeyName(3, "m-02-04-normal.jpg")
+        Me.ILMN.Images.SetKeyName(4, "m-02-01-normal.jpg")
+        Me.ILMN.Images.SetKeyName(5, "m-02-02-normal.jpg")
+        Me.ILMN.Images.SetKeyName(6, "m-02-03-normal.jpg")
+        Me.ILMN.Images.SetKeyName(7, "m-02-04-normal.jpg")
+        Me.ILMN.Images.SetKeyName(8, "m-03-01-normal.jpg")
+        Me.ILMN.Images.SetKeyName(9, "m-03-02-normal.jpg")
+        '
+        'ILHN
+        '
+        Me.ILHN.ImageStream = CType(resources.GetObject("ILHN.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ILHN.TransparentColor = System.Drawing.Color.Transparent
+        Me.ILHN.Images.SetKeyName(0, "h-01-01-normal.jpg")
+        Me.ILHN.Images.SetKeyName(1, "h-01-02-normal.jpg")
+        Me.ILHN.Images.SetKeyName(2, "h-01-03-normal.jpg")
+        Me.ILHN.Images.SetKeyName(3, "h-01-04-normal.jpg")
+        Me.ILHN.Images.SetKeyName(4, "h-02-01-normal.jpg")
+        Me.ILHN.Images.SetKeyName(5, "h-02-02-normal.jpg")
+        Me.ILHN.Images.SetKeyName(6, "h-02-03-normal.jpg")
+        Me.ILHN.Images.SetKeyName(7, "h-02-04-normal.jpg")
+        Me.ILHN.Images.SetKeyName(8, "h-03-01-normal.jpg")
+        Me.ILHN.Images.SetKeyName(9, "h-03-02-normal.jpg")
+        Me.ILHN.Images.SetKeyName(10, "h-03-03-normal.jpg")
+        Me.ILHN.Images.SetKeyName(11, "h-03-04-normal.jpg")
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label3.Location = New System.Drawing.Point(99, 1)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(3, 1, 0, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Padding = New System.Windows.Forms.Padding(0, 1, 0, 0)
+        Me.Label3.Size = New System.Drawing.Size(25, 31)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "$"
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(721, 750)
+        Me.ClientSize = New System.Drawing.Size(721, 742)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.plProductoM)
         Me.Controls.Add(Me.tblDetails)
@@ -843,7 +804,7 @@ Partial Class MainForm
         Me.MinimizeBox = False
         Me.Name = "MainForm"
         Me.ShowIcon = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         CType(Me.pbCover, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.plMainTitle.ResumeLayout(False)
@@ -868,10 +829,10 @@ Partial Class MainForm
         Me.tblCantidad.PerformLayout()
         Me.tblTotal.ResumeLayout(False)
         Me.tblTotal.PerformLayout()
-        Me.plProductoM.ResumeLayout(False)
-        CType(Me.PBPRINCIPAL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        Me.plProductoM.ResumeLayout(False)
+        CType(Me.PBPRINCIPAL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -920,16 +881,13 @@ Partial Class MainForm
     Friend WithEvents LblT3 As Label
     Friend WithEvents LblT2 As Label
     Friend WithEvents LblT1 As Label
-    Friend WithEvents PBPRINCIPAL As PictureBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents ILHS As ImageList
-    Friend WithEvents ILHN As ImageList
-    Friend WithEvents ILMN As ImageList
-    Friend WithEvents ILMS As ImageList
     Friend WithEvents ILCN As ImageList
-    Friend WithEvents ILCS As ImageList
     Friend WithEvents ILAN As ImageList
-    Friend WithEvents ILAS As ImageList
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Label2 As Label
+    Friend WithEvents PBPRINCIPAL As PictureBox
+    Friend WithEvents ILMN As ImageList
+    Friend WithEvents ILHN As ImageList
+    Friend WithEvents Label3 As Label
 End Class
