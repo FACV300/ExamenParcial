@@ -25,6 +25,11 @@
     Private AlmA2 As Integer = 0
 
 
+    Private TotalH As Integer = 0
+    Private TotalM As Integer = 0
+    Private TotalC As Integer = 0
+    Private TotalA As Integer = 0
+
     Private Total As Integer = 0
 
 
@@ -578,15 +583,18 @@
             Select Case PosH1
                 Case 0
                     AlmH1 = txtCantidad.Text
-                    Total = Total + (AlmH1 * 85)
+                    TotalH = (AlmH1 * 85) + (AlmH2 * 110) + (AlmH3 * 95)
+                    Total = TotalH + TotalM + TotalC + TotalA
                     lblTotal.Text = Total
                 Case 1
                     AlmH2 = txtCantidad.Text
-                    Total = Total + (AlmH2 * 110)
+                    TotalH = (AlmH1 * 85) + (AlmH2 * 110) + (AlmH3 * 95)
+                    Total = TotalH + TotalM + TotalC + TotalA
                     lblTotal.Text = Total
                 Case 2
                     AlmH3 = txtCantidad.Text
-                    Total = Total + (AlmH3 * 95)
+                    TotalH = (AlmH1 * 85) + (AlmH2 * 110) + (AlmH3 * 95)
+                    Total = TotalH + TotalM + TotalC + TotalA
                     lblTotal.Text = Total
             End Select
         End If
@@ -594,15 +602,18 @@
             Select Case PosM1
                 Case 0
                     AlmM1 = txtCantidad.Text
-                    Total = Total + (AlmM1 * 120)
+                    TotalM = (AlmM1 * 120) + (AlmH2 * 190) + (AlmH3 * 125)
+                    Total = TotalH + TotalM + TotalC + TotalA
                     lblTotal.Text = Total
                 Case 1
                     AlmM2 = txtCantidad.Text
-                    Total = Total + (AlmM2 * 190)
+                    TotalM = (AlmM1 * 120) + (AlmH2 * 190) + (AlmH3 * 125)
+                    Total = TotalH + TotalM + TotalC + TotalA
                     lblTotal.Text = Total
                 Case 2
                     AlmM3 = txtCantidad.Text
-                    Total = Total + (AlmM3 * 125)
+                    TotalM = (AlmM1 * 120) + (AlmH2 * 190) + (AlmH3 * 125)
+                    Total = TotalH + TotalM + TotalC + TotalA
                     lblTotal.Text = Total
             End Select
         End If
@@ -613,14 +624,18 @@
                 Case 0
                     AlmC1 = txtCantidad.Text
                     Total = Total + (AlmC1 * 55)
+                    TotalC = (AlmC1 * 55) + (AlmC2 * 80) + (AlmC3 * 155)
+                    Total = TotalH + TotalM + TotalC + TotalA
                     lblTotal.Text = Total
                 Case 1
                     AlmC2 = txtCantidad.Text
-                    Total = Total + (AlmC2 * 80)
+                    TotalC = (AlmC1 * 55) + (AlmC2 * 80) + (AlmC3 * 155)
+                    Total = TotalH + TotalM + TotalC + TotalA
                     lblTotal.Text = Total
                 Case 2
                     AlmC3 = txtCantidad.Text
-                    Total = Total + (AlmC3 * 155)
+                    TotalC = (AlmC1 * 55) + (AlmC2 * 80) + (AlmC3 * 155)
+                    Total = TotalH + TotalM + TotalC + TotalA
                     lblTotal.Text = Total
             End Select
         End If
@@ -628,22 +643,72 @@
             Select Case PosA1
                 Case 0
                     AlmA1 = txtCantidad.Text
-                    Total = Total + (AlmA1 * 175)
+                    TotalA = (AlmA1 * 175) + (AlmA2 * 25)
+                    Total = TotalH + TotalM + TotalC + TotalA
                     lblTotal.Text = Total
                 Case 1
                     AlmA2 = txtCantidad.Text
-                    Total = Total + (AlmA2 * 25)
+                    TotalA = (AlmA1 * 175) + (AlmA2 * 25)
+                    Total = TotalH + TotalM + TotalC + TotalA
                     lblTotal.Text = Total
 
             End Select
         End If
     End Sub
 
-    Private Sub tblMenu_Paint(sender As Object, e As PaintEventArgs) Handles tblMenu.Paint
+    Private Sub btnComprar_Click(sender As Object, e As EventArgs) Handles btnComprar.Click
+        If Total = 0 Then
+            Beep()
+        Else
+            MessageBox.Show("Usted pagó con éxito: $ " & Total)
+            txtCantidad.Text = "0"
+            PanelH = True
+            PanelM = False
+            PanelC = False
+            PanelA = False
+            PosH1 = 0
+            AlmH1 = 0
+            AlmH2 = 0
+            AlmH3 = 0
+            AlmM1 = 0
+            AlmM2 = 0
+            AlmM3 = 0
+            AlmC1 = 0
+            AlmC2 = 0
+            AlmC3 = 0
+            AlmA1 = 0
+            AlmA2 = 0
+            TotalH = 0
+            TotalM = 0
+            TotalC = 0
+            TotalA = 0
+            Total = 0
+            lblTotal.Text = 0
 
-    End Sub
-
-    Private Sub MainForm_BackgroundImageChanged(sender As Object, e As EventArgs) Handles Me.BackgroundImageChanged
-
+            PB2.Show()
+            PB3.Show()
+            PB4.Show()
+            PB1.Image = ILHN.Images.Item(0)
+            PB2.Image = ILHN.Images.Item(1)
+            PB3.Image = ILHN.Images.Item(2)
+            PB4.Image = ILHN.Images.Item(3)
+            PBPRINCIPAL.Image = ILHN.Images.Item(0)
+            BtnH.ForeColor = Color.SteelBlue
+            BtnM.ForeColor = Color.Black
+            BtnC.ForeColor = Color.Black
+            BtnA.ForeColor = Color.Black
+            lblTitulo.Text = "Eng Poplin Shirt"
+            LblT1.Text = "XS"
+            LblT1.ForeColor = Color.Gray
+            LblT2.Text = "S"
+            LblT2.ForeColor = Color.Black
+            LblT3.Text = "M"
+            LblT3.ForeColor = Color.Black
+            LblT4.Text = "L"
+            LblT4.ForeColor = Color.Black
+            LblT5.Text = "XL"
+            LblT5.ForeColor = Color.Gray
+            lblPrecio.Text = "85"
+        End If
     End Sub
 End Class

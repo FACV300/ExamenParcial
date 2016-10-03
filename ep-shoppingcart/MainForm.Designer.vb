@@ -64,6 +64,7 @@ Partial Class MainForm
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnComprar = New System.Windows.Forms.Button()
         Me.tblTotal = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.lblTotalT = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -75,7 +76,6 @@ Partial Class MainForm
         Me.ILAN = New System.Windows.Forms.ImageList(Me.components)
         Me.ILMN = New System.Windows.Forms.ImageList(Me.components)
         Me.ILHN = New System.Windows.Forms.ImageList(Me.components)
-        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.pbCover, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.plMainTitle.SuspendLayout()
@@ -101,17 +101,17 @@ Partial Class MainForm
         'pbCover
         '
         Me.pbCover.Image = CType(resources.GetObject("pbCover.Image"), System.Drawing.Image)
-        Me.pbCover.Location = New System.Drawing.Point(0, 0)
+        Me.pbCover.Location = New System.Drawing.Point(0, -19)
         Me.pbCover.Margin = New System.Windows.Forms.Padding(0)
         Me.pbCover.Name = "pbCover"
-        Me.pbCover.Size = New System.Drawing.Size(720, 164)
+        Me.pbCover.Size = New System.Drawing.Size(720, 147)
         Me.pbCover.TabIndex = 0
         Me.pbCover.TabStop = False
         '
         'pbLogo
         '
         Me.pbLogo.Image = CType(resources.GetObject("pbLogo.Image"), System.Drawing.Image)
-        Me.pbLogo.Location = New System.Drawing.Point(541, 16)
+        Me.pbLogo.Location = New System.Drawing.Point(545, 12)
         Me.pbLogo.Name = "pbLogo"
         Me.pbLogo.Size = New System.Drawing.Size(152, 80)
         Me.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -125,7 +125,7 @@ Partial Class MainForm
         Me.plMainTitle.Location = New System.Drawing.Point(0, 0)
         Me.plMainTitle.Margin = New System.Windows.Forms.Padding(0)
         Me.plMainTitle.Name = "plMainTitle"
-        Me.plMainTitle.Size = New System.Drawing.Size(721, 125)
+        Me.plMainTitle.Size = New System.Drawing.Size(721, 100)
         Me.plMainTitle.TabIndex = 2
         '
         'ilFlechas
@@ -157,7 +157,7 @@ Partial Class MainForm
         Me.tblProdSmall.Controls.Add(Me.PB3, 0, 2)
         Me.tblProdSmall.Controls.Add(Me.PB2, 0, 1)
         Me.tblProdSmall.Controls.Add(Me.PB1, 0, 0)
-        Me.tblProdSmall.Location = New System.Drawing.Point(0, 215)
+        Me.tblProdSmall.Location = New System.Drawing.Point(3, 190)
         Me.tblProdSmall.Name = "tblProdSmall"
         Me.tblProdSmall.RowCount = 4
         Me.tblProdSmall.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
@@ -262,7 +262,7 @@ Partial Class MainForm
         Me.tblTitle.Controls.Add(Me.tblMenu, 0, 0)
         Me.tblTitle.Controls.Add(Me.tblNavigation, 0, 2)
         Me.tblTitle.Controls.Add(Me.plLine1, 0, 1)
-        Me.tblTitle.Location = New System.Drawing.Point(0, 128)
+        Me.tblTitle.Location = New System.Drawing.Point(3, 106)
         Me.tblTitle.Name = "tblTitle"
         Me.tblTitle.RowCount = 4
         Me.tblTitle.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
@@ -521,7 +521,7 @@ Partial Class MainForm
         Me.tblDetails.Controls.Add(Me.btnComprar, 0, 5)
         Me.tblDetails.Controls.Add(Me.tblTotal, 0, 6)
         Me.tblDetails.Controls.Add(Me.TableLayoutPanel1, 0, 0)
-        Me.tblDetails.Location = New System.Drawing.Point(497, 215)
+        Me.tblDetails.Location = New System.Drawing.Point(500, 190)
         Me.tblDetails.Name = "tblDetails"
         Me.tblDetails.RowCount = 7
         Me.tblDetails.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70.0!))
@@ -619,7 +619,7 @@ Partial Class MainForm
         Me.tblTotal.ColumnCount = 3
         Me.tblTotal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.tblTotal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tblTotal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72.0!))
+        Me.tblTotal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73.0!))
         Me.tblTotal.Controls.Add(Me.Label3, 0, 0)
         Me.tblTotal.Controls.Add(Me.lblTotalT, 0, 0)
         Me.tblTotal.Controls.Add(Me.lblTotal, 2, 0)
@@ -630,6 +630,21 @@ Partial Class MainForm
         Me.tblTotal.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.tblTotal.Size = New System.Drawing.Size(197, 32)
         Me.tblTotal.TabIndex = 7
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label3.Location = New System.Drawing.Point(99, 1)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(3, 1, 0, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Padding = New System.Windows.Forms.Padding(0, 1, 0, 0)
+        Me.Label3.Size = New System.Drawing.Size(25, 31)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "$"
         '
         'lblTotalT
         '
@@ -688,7 +703,7 @@ Partial Class MainForm
         'plProductoM
         '
         Me.plProductoM.Controls.Add(Me.PBPRINCIPAL)
-        Me.plProductoM.Location = New System.Drawing.Point(105, 215)
+        Me.plProductoM.Location = New System.Drawing.Point(111, 190)
         Me.plProductoM.Name = "plProductoM"
         Me.plProductoM.Size = New System.Drawing.Size(381, 503)
         Me.plProductoM.TabIndex = 13
@@ -706,7 +721,7 @@ Partial Class MainForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(184, 728)
+        Me.Label1.Location = New System.Drawing.Point(184, 696)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(329, 13)
         Me.Label1.TabIndex = 14
@@ -769,27 +784,12 @@ Partial Class MainForm
         Me.ILHN.Images.SetKeyName(10, "h-03-03-normal.jpg")
         Me.ILHN.Images.SetKeyName(11, "h-03-04-normal.jpg")
         '
-        'Label3
-        '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Label3.Location = New System.Drawing.Point(99, 1)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(3, 1, 0, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Padding = New System.Windows.Forms.Padding(0, 1, 0, 0)
-        Me.Label3.Size = New System.Drawing.Size(25, 31)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "$"
-        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(721, 742)
+        Me.ClientSize = New System.Drawing.Size(709, 708)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.plProductoM)
         Me.Controls.Add(Me.tblDetails)
